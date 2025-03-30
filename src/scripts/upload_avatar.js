@@ -10,7 +10,7 @@ export const uploadAvatar = async () => {
     const formData = new FormData();
     formData.append("avatar", file); // 🔹 Belangrijk: de naam moet "avatar" zijn! Dit moet overeen komen met de naam in Multer middleware
 
-    const res = await fetch("/api/avatar/upload", {
+    const res = await fetch(`${API_BASE}/api/avatar/upload`, {
         method: "POST",
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem("user")).access_token}` },
         body: formData

@@ -1,6 +1,8 @@
 import { secureFetch } from "./utilities/apiClient.js";
 import { applyBrainBackground } from "./utilities/brainBackground.js";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 export const fetchProfileStudent = async () => {
     console.log("✅ Profiel Student geladen.");
 
@@ -108,7 +110,7 @@ const uploadAvatar = async () => {
     formData.append("avatar", file);
 
     try {
-        const res = await fetch("/api/student/profile/upload-avatar", {
+        const res = await fetch(`${API_BASE}/api/student/profile/upload-avatar`, {
             method: "POST",
             headers: { Authorization: `Bearer ${accessToken}` },
             body: formData
@@ -138,7 +140,7 @@ export const getBadges = async (userId) => {
     }
 
     try {
-        const res = await fetch(`/api/student/profile`, {
+        const res = await fetch(`${API_BASE}/api/student/profile`, {
             method: "GET",
             headers: { Authorization: `Bearer ${accessToken}` },
         });

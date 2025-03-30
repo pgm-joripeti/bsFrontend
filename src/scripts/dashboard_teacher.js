@@ -4,6 +4,8 @@ import { applyBrainBackground } from "./utilities/brainBackground.js";
 import { secureFetch } from "./utilities/apiClient.js";
 import { showAlert } from "./utilities/alert.js";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 import { enablePopovers } from "./utilities/popoverManager.js";
 enablePopovers();
 
@@ -18,6 +20,8 @@ export const initDashboardTeacher = async () => {
     const totalQuizzesElem = document.querySelector("#stats");
     const searchInput = document.querySelector("#search-input");
     const searchButton = document.querySelector("#search-button");
+
+    const API_BASE = import.meta.env.VITE_API_BASE;
 
     // ✅ Haal token op uit localStorage
     const token = localStorage.getItem("token");
@@ -35,7 +39,7 @@ export const initDashboardTeacher = async () => {
         });
 
         // ✅ Haal globale statistieken op
-        const resGlobal = await fetch("/api/stats/global", {
+        const resGlobal = await fetch(`${API_BASE}/api/stats/global`, {
             method: "GET",
             headers: { "Authorization": `Bearer ${token}` }
         });
@@ -301,7 +305,7 @@ const deleteQuiz = async (quizId) => {
     try {
         // console.log(`🗑️ Verzenden van DELETE request voor quiz ID: ${quizId}`);
 
-        const res = await fetch(`/api/quizzes/${quizId}`, { 
+        const res = await fetch(`${API_BASE}/api/quizzes/${quizId}`, { 
             method: "DELETE",
             headers: { 
                 "Authorization": `Bearer ${token}` 

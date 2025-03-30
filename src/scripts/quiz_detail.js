@@ -6,6 +6,8 @@ import { applyBrainBackground } from "./utilities/brainBackground.js";
 import { secureFetch } from "./utilities/apiClient.js";
 import { typesetMath } from './utilities/mathJax.js';
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 function renderQuestion(q) {
   questionEl.innerHTML = q.text; // met LaTeX
   typesetMath(); // triggert MathJax
@@ -59,7 +61,7 @@ export async function fetchQuestions(quizIdParam) {
 }
 
 export async function fetchQuizDetails(quizId) {
-    const response = await fetch(`/api/quizzes/${quizId}`, {
+    const response = await fetch(`${API_BASE}/api/quizzes/${quizId}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -365,7 +367,7 @@ async function submitAnswer(userInput, isTimeout) {
     console.log("⏱️ Voor submit: score =", score);
 
     try {
-        const response = await fetch(`/api/quizzes/${quizId}/answer`, {
+        const response = await fetch(`${API_BASE}/api/quizzes/${quizId}/answer`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -473,7 +475,7 @@ async function finishQuiz() {
     console.log("📤 Verzenden naar backend: score =", score);
 
     try {
-        const res = await fetch(`/api/quizzes/${quizId}/finish`, {
+        const res = await fetch(`${API_BASE}/api/quizzes/${quizId}/finish`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -559,7 +561,7 @@ if (koopBtn) {
         const token = localStorage.getItem("token");
 
         try {
-            const res = await fetch("/api/payments/create-checkout-session", {
+            const res = await fetch(`${API_BASE}/api/payments/create-checkout-session`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -689,7 +691,7 @@ document.body.addEventListener("click", async (event) => {
             image_url: questionData.image_url
             });
 
-            const response = await fetch("/api/quizzes/ai-tip", {
+            const response = await fetch(`${API_BASE}/api/quizzes/ai-tip`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -759,7 +761,7 @@ document.body.addEventListener("click", (event) => {
 async function fetchQbitBalance() {
     const token = localStorage.getItem("token");
     try {
-        const res = await fetch("/api/student/qbits", {
+        const res = await fetch(`${API_BASE}/api/student/qbits`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` }
         });

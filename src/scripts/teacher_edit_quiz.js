@@ -6,6 +6,8 @@ import { secureFetch } from "./utilities/apiClient.js";
 import { createShareComponent } from "./utilities/shareButtons.js";
 import confetti from "canvas-confetti";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 // ✅ Mathlive fonts configuratie
 // window.MathfieldElement = MathfieldElement;
 // window.MathfieldElement.fontsDirectory = '/mathlive/fonts';
@@ -223,7 +225,7 @@ const submitUpdatedQuiz = async (event, quizId) => {
               const formData = new FormData();
               formData.append("file", file);
       
-              const uploadRes = await fetch(`http://localhost:3000/api/supabase/upload?path=${filePath}`, {
+              const uploadRes = await fetch(`${API_BASE}/api/supabase/upload?path=${filePath}`, {
                 method: "POST",
                 headers: {
                   Authorization: `Bearer ${token}`,
@@ -262,7 +264,7 @@ const submitUpdatedQuiz = async (event, quizId) => {
 
     // ✅ Stuur geüpdatete quiz naar backend
     try {
-        const res = await fetch(`/api/quizzes/${quizId}`, {
+        const res = await fetch(`${API_BASE}/api/quizzes/${quizId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -314,7 +316,7 @@ const deleteQuiz = async (quizId) => {
     }
 
     try {
-        const res = await fetch(`/api/quizzes/${quizId}`, { 
+        const res = await fetch(`${API_BASE}/api/quizzes/${quizId}`, { 
             method: "DELETE",
             headers: { "Authorization": `Bearer ${token}` }
         });

@@ -4,7 +4,6 @@ import confetti from "canvas-confetti";
 import { createShareComponent } from "./utilities/shareButtons.js";
 import { secureFetch } from "./utilities/apiClient.js";
 
-
 window.addEventListener("popstate", removeOverlay);
 window.addEventListener("hashchange", removeOverlay);
 

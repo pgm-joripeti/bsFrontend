@@ -1,6 +1,8 @@
 import { secureFetch } from "./utilities/apiClient.js";
 import { applyBrainBackground } from "./utilities/brainBackground.js";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 export const fetchProfileTeacher = async () => {
     console.log("✅ Profiel Teacher geladen.");
 
@@ -111,7 +113,7 @@ const uploadAvatar = async () => {
     formData.append("avatar", file);
 
     try {
-        const res = await fetch("/api/teacher/profile/upload-avatar", {
+        const res = await fetch(`${API_BASE}/api/teacher/profile/upload-avatar`, {
             method: "POST",
             headers: { Authorization: `Bearer ${accessToken}` },
             body: formData

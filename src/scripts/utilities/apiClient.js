@@ -1,5 +1,7 @@
 import { navigateTo } from "../router";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 export async function secureFetch(url, options = {}) {
     const token = localStorage.getItem("token");
 
@@ -10,7 +12,7 @@ export async function secureFetch(url, options = {}) {
         "Content-Type": options.headers?.["Content-Type"] || "application/json"
     };
 
-    const res = await fetch(url, options);
+    const res = await fetch(`${API_BASE}${url}`, options);
 
     if (res.status === 401) {
         navigateTo("/");

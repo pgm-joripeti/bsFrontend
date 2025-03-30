@@ -7,6 +7,8 @@ import { applyBrainBackground } from "./utilities/brainBackground.js";
 import { createShareComponent } from "./utilities/shareButtons.js";
 import { secureFetch } from "./utilities/apiClient.js";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 // ✅ Mathlive fonts configuratie
 // window.MathfieldElement = MathfieldElement;
 // window.MathfieldElement.fontsDirectory = '/mathlive/fonts';
@@ -449,7 +451,7 @@ const submitQuiz = async (event) => {
                     const formData = new FormData();
                     formData.append("file", file);
 
-                    const uploadRes = await fetch(`/api/supabase/upload?path=${filePath}`, {
+                    const uploadRes = await fetch(`${API_BASE}/api/supabase/upload?path=${filePath}`, {
                         method: "POST",
                         headers: { Authorization: `Bearer ${token}` },
                         body: formData

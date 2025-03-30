@@ -2,10 +2,12 @@ import { navigateTo } from "./router.js";
 import { enableMouseFollowEffect } from "./utilities/auth-mouse_follow.js";
 import { showAlert } from "./utilities/alert.js";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 // ✅ Haal de scholen op
 async function fetchScholen() {
     try {
-        const res = await fetch("/api/database/schools");
+        const res = await fetch(`${API_BASE}/api/database/schools`);
         if (!res.ok) throw new Error("Kan scholen niet laden.");
         const data = await res.json();
         
@@ -31,7 +33,7 @@ async function fetchScholen() {
 // ✅ Haal de graden op
 async function fetchGraden() {
     try {
-        const res = await fetch("/api/database/grades");
+        const res = await fetch(`${API_BASE}/api/database/grades`);
         if (!res.ok) throw new Error("Kan graden niet laden.");
         const data = await res.json();
 
@@ -57,7 +59,7 @@ async function fetchGraden() {
 // ✅ Haal de richtingen op
 async function fetchRichtingen() {
     try {
-        const res = await fetch("/api/database/programs");
+        const res = await fetch(`${API_BASE}/api/database/programs`);
         if (!res.ok) throw new Error("Kan richtingen niet laden.");
         const data = await res.json();
 
@@ -130,7 +132,7 @@ export async function initRegister() {
             }
 
             try {
-                const res = await fetch("/api/auth/register", {
+                const res = await fetch(`${API_BASE}/api/auth/register`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({

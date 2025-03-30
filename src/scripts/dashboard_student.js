@@ -2,6 +2,8 @@ import { navigateTo } from "./router.js";
 import { applyBrainBackground } from "./utilities/brainBackground.js";
 import { secureFetch } from "./utilities/apiClient.js"
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 export function initDashboardStudent() {
     
     console.log("✅ Dashboard Student geladen.");

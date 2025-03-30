@@ -1,5 +1,7 @@
 import { secureFetch } from "./utilities/apiClient";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 export const initLeaderboardTeacher = async () => {
     console.log("✅ Leaderboard Teacher geladen.");
 
@@ -36,7 +38,7 @@ export const initLeaderboardTeacher = async () => {
         renderLeaderboard(leaderboardData);
 
         // ✅ Haal de persoonlijke ranking van de leerkracht op
-        const rankingRes = await fetch("/api/leaderboard/ranking", {
+        const rankingRes = await fetch(`${API_BASE}/api/leaderboard/ranking`, {
             method: "GET",
             headers: { 
                 "Content-Type": "application/json",
