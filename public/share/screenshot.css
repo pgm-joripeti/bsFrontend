@@ -1,0 +1,97 @@
+:root {
+    /* jouw variabelen worden al ingeladen – niets hier herdefiniëren */
+  }
+
+  .share-frame-wrapper .createquiz-header-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  
+  .share-frame-wrapper {
+    background-color: var(--purple-700);
+    font-family: var(--text-font);
+    padding: var(--padding_l);
+    border-radius: var(--border-radius_extra-large);
+    max-width: 720px;
+    box-shadow: var(--shadow-elevated);
+    color: var(--grey-200);
+    text-align: center;
+  }
+  
+  .share-frame-logo {
+    width: 80px;
+    margin: 0 auto var(--padding_m);
+    display: block;
+  }
+  
+  .share-frame-caption {
+    margin-top: var(--padding_l);
+    font-weight: var(--fat-font);
+    font-size: var(--font-size-text);
+    line-height: var(--line-height-title);
+    color: var(--grey-200);
+  }
+  
+  .share-frame-content {
+    margin-top: var(--padding_l);
+  }
+
+  /* screenshot.css */
+.share-frame-wrapper h1 {
+  color: var(--yellow-500); 
+  /* font-family: var(--title-font);  */
+}
+  
+  .share-frame-content button {
+    all: unset;
+    display: inline-block;
+    margin: var(--padding_s);
+    padding: var(--padding_s) var(--padding_m);
+    background-color: var(--green-500);
+    color: var(--grey-200);
+    border-radius: var(--border-radius_medium);
+    font-weight: var(--fat-font);
+    font-size: var(--font-size-text);
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease;
+  }
+  
+  .share-frame-content button:hover {
+    transform: scale(1.05);
+    background-color: var(--green-600);
+  }
+  
+  .share-frame-wrapper select,
+.share-frame-wrapper input[type="text"],
+.share-frame-wrapper button {
+  font-family: var(--text-font);
+  font-size: var(--font-size-text);
+  padding: var(--padding_s);
+  margin: var(--margin_s) 0;
+  border-radius: var(--radius-m);
+  border: none;
+  width: 100%;
+  box-shadow: var(--shadow-soft);
+  color: var(--purple-800);
+}
+
+.share-frame-wrapper input[type="text"],
+.share-frame-wrapper select {
+  background-color: var(--purple-200);
+}
+
+.share-frame-wrapper button {
+  background-color: var(--green-600);
+  color: var(--grey-200);
+  font-weight: var(--fat-font);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.share-frame-wrapper button:hover {
+  background-color: var(--green-700);
+}

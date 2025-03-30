@@ -1,0 +1,160 @@
+.ai-tip-btn {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--yellow-500);
+  }
+  
+  .ai-modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    max-width: 90%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: var(--purple-400);
+    padding: var(--padding_m);
+    border-radius: var(--border-radius_medium);
+    box-shadow: var(--shadow-normal);
+    color: var(--grey-200);
+    z-index: 5000;
+    opacity: 0;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.ai-tip-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.85); /* Startpositie direct correct */
+  background-color: var(--purple-600);
+  border: var(--purple-800) solid 0.05rem;
+  border-radius: var(--border-radius_medium);
+  box-shadow: var(--shadow-normal);
+  padding: var(--padding_l);
+  width: 50%;
+  max-width: 600px;
+  opacity: 0;
+  visibility: hidden; /* Zorgt dat de container niet verspringt */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 5000;
+}
+
+/* Wobble-in effect bij openen */
+.ai-tip-container.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Wobble-out effect bij sluiten */
+.ai-tip-container.wobble-out {
+  animation: wobbleOut 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+
+/* Sluitknop correct in de rechterbovenhoek van de AI Tip */
+.ai-tip__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-title);
+  cursor: pointer;
+  color: var(--grey-200);
+  z-index: 6000;
+}
+
+.ai-tip__close:hover {
+  color: var(--red-500);
+}
+
+.ai-tip__title {
+    font-family: var(--title-font);
+    font-size: var(--font-size-title);
+    color: var(--yellow-500);
+    font-weight: bold;
+}
+
+.ai-tip__content {
+    font-family: var(--text-font);
+    font-size: var(--font-size-text);
+    color: var(--grey-200);
+}
+
+/* Loader div (spinner) */
+/* Donkere overlay */
+.ai-tip-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 50% donkerder */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out;
+  z-index: 4000; /* Lager dan loader maar boven rest */
+}
+
+/* Actieve overlay */
+.ai-tip-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Loader */
+.ai-tip-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--purple-700);
+  padding: var(--padding_l);
+  border-radius: var(--border-radius_medium);
+  box-shadow: var(--shadow-normal);
+  color: var(--grey-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out;
+  z-index: 5001;
+}
+
+/* Laat loader zien */
+.ai-tip-loader.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Spinner */
+.ai-tip-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid var(--yellow-500);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Tekst onder loader */
+.ai-tip-loader p {
+  margin-top: 10px;
+  font-size: var(--font-size-text);
+  text-align: center;
+  color: var(--grey-200);
+}
+
+/* Keyframes voor spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

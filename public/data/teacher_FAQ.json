@@ -1,0 +1,42 @@
+[
+    {
+        "question": "Hoe wordt de populariteit van mijn quizzes berekend?",
+        "answer": "We vergelijken het aantal attempts per quiz met het gemiddelde van alle quizzes in de database.<br><br><ol><li><strong>Erg populair</strong> (groen): Als het aantal attempts minstens 20% hoger ligt dan het algemene gemiddelde.</li><li><strong>Vaak opgelost</strong> (geel): Als het aantal attempts binnen een marge van ±20% van het gemiddelde ligt.</li><li><strong>Weinig opgelost</strong> (rood): Als het aantal attempts meer dan 20% onder het gemiddelde ligt.</li></ol>"
+    },
+    {
+        "question": "Wanneer noemen we een quiz makkelijk, gemiddeld of moeilijk?",
+        "answer": "We vergelijken de gemiddelde score van elke quiz met het gemiddelde van alle quizzes in de database.<br><br><ol><li><strong>Erg moeilijk</strong> (rood): Als de gemiddelde score minstens 20% lager ligt dan het algemeen gemiddelde.</li><li><strong>Gemiddeld moeilijk</strong> (geel): Als de gemiddelde score binnen een marge van ±20% rond het gemiddelde ligt.</li><li><strong>Erg makkelijk</strong> (groen): Als de gemiddelde score meer dan 20% boven het algemeen gemiddelde ligt.</li></ol>"
+    },
+    {
+        "question": "Wat betekenen mijn productiviteitslabels?",
+        "answer": "We vergelijken het aantal quizzes dat je als leerkracht hebt aangemaakt met het gemiddelde van alle leerkrachten.<br><br><ol><li><strong>Gemiddeld productief</strong> (groen): Als jouw aantal quizzes binnen ±20% van het gemiddelde ligt.</li><li><strong>Couch potato</strong> (rood): Als je minstens 20% minder quizzes hebt aangemaakt dan het gemiddelde.</li><li><strong>Workaholic</strong> (groen): Als je minstens 20% meer quizzes hebt aangemaakt dan het gemiddelde.</li></ol>"
+    },
+    {
+        "question":"Wie kan meedoen met de BRAINSMASH competitie?",
+        "answer": "Iedere leerling en leerkracht van een school die opgelijst wordt in het registratie scherm"
+    },
+    {
+        "question":"Wat en wie is BRAINSMASH?",
+        "answer": "BRAINSMASH is het geesteskind van Joris Petillion, leerkracht informatica aan Het Spectrum in Gent. Het werd grotendeels ontwikkeld door dhr Petillion, met hulp van zijn leerlingen in de klassen 5AD en 6AD (Applicatie en Databeheer): Artun Gürkan, Noah Huylebroeck, Noa Picavet, Faruk Emre Sahin, Aline Yoshinari, Arne Meeus, Ignace Vermeulen, Summiya Yousaf, en Seyyidhan Asildas. De leerlingen AD onderhouden de website."
+    },
+    {
+        "question":"Waarom bestaat BRAINSMASH?",
+        "answer": "Joris Petillion startte deze quiz competitie om de opleiding appllicatie en databeheer aan de Gentse technische school Het Spectrum in de verf te zetten. We hopen op deze manier onze programmeer opleiding te kunnen uitbreiden."
+    },
+    {
+        "question":"Wat is de tech stack van BRAINSMASH?",
+        "answer": "De BRAINSMASH app is een SPA (single page application) MVC (model-view-control) project geschreven in vanilla JavaScript, HTML en CSS. Het project draait op een express.js server. NPM (node package manager) libraries omvatten verder ondermeer langgraph, openai, cors en MUI icons."
+    },
+    {
+        "question":"Hoe werkt de leaderboard precies?",
+        "answer": "De leaderboard lijst een ranking van leerlingen per league op basis van hun aantal XP punten en QBits. Het is niet de bedoeling leerlingen of scholen met mekaar te vergelijken. Daarom werken we met random leagues die elke week gereset worden."
+    },
+    {
+        "question":"Van wanneer tot wanneer loopt de BRAINSMASH commpetitie precies?",
+        "answer": "Je kan elke week van het jaar deelnemen aan een league!"
+    },
+    {
+      "question":"Hoe werken de badges?",
+        "answer": "<strong>Er zijn 5 badges: </strong><br><br><ol><li><strong>Kat: </strong>deze krijg je als je minimum 1 quiz vervolledigde voor elk onderwerp dat beschikbaar is voor jouw richting en graad</li><li><strong>Eekhoorn: </strong>ontvang deze badge door alle quizzes te vervolledigen die beschikbaar zijn voor jouw richting</li><li><strong>Ijsvogel: </strong>voor de deelnemer die de hoogste score haalde in een quiz, vergeleken met alle scores van alle leerlingen voor deze specifieke quiz</li><li><strong>Gorilla: </strong>deze krijg je automatisch als je de ijsvogel en de eekhoorn badge haalde</li><li><strong>Pole Position: </strong>deze badge is voor de deelnemer die bovenaan een league komt te staan</li></ol><br><p>Alle badges worden wekelijks gereset, in lijn met de league resets.</p>"
+    }
+]

@@ -1,0 +1,39 @@
+<main>
+    <form id="quizForm">
+        <div class="createquiz-container">
+            <div class="createquiz-header">
+                <div class="createquiz-header-container">
+                    <h1>Quiz Aanmaken</h1>
+                    <input type="text" id="title" id="screenshot-target" placeholder="Quiz Titel" required>
+                    <select id="difficulty">
+                        <option value="makkelijk">Makkelijk</option>
+                        <option value="gemiddeld">Gemiddeld</option>
+                        <option value="moeilijk">Moeilijk</option>
+                    </select>
+                    <select id="course" required>
+                        <option value="">Vakken worden geladen...</option>
+                    </select>
+                    
+                    <select id="program" multiple required size="5">
+                        <option value="">Studierichtingen worden geladen...</option>
+                    </select>
+                    <small style="color: var(--green-500)">Hou Ctrl (Cmd op Mac) ingedrukt om meerdere richtingen te selecteren.</small>
+
+                    
+                    <select id="grade" required>
+                        <option value="">Graden worden geladen...</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- <h2>Vragen</h2> -->
+            <div id="vragenContainer"></div>
+            <div class="createquiz btn-container">
+                <button type="button" id="addQuestionBtn" class="btn btn-secondary">Voeg Vraag Toe</button>
+                <button type="submit" class="btn btn-success">Quiz Opslaan</button>
+            </div>
+            <p id="error-message"></p>
+        </div>
+    </form>
+    <p id="message"></p>
+</main>

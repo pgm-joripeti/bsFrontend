@@ -1,0 +1,36 @@
+
+    <section class="auth__container">
+        <div class="auth__header">
+            <h1>Registreren</h1>
+        </div>
+        <form id="registerForm">
+            <input type="text" id="full_name" placeholder="Volledige naam" required>
+            <input type="text" id="nickname" placeholder="Gebruikersnaam" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="password" id="password" placeholder="Wachtwoord" required>
+
+            <select id="role">
+                <option value="leerling">Leerling</option>
+                <option value="leerkracht">Leerkracht</option>
+            </select>
+
+            <select id="school" required>
+                <option value="">Selecteer een school</option>
+            </select>
+
+            <select id="program" required>
+                <option value="">Selecteer een richting</option>
+            </select>
+
+            <select id="grade" required>
+                <option value="">Selecteer een graad</option>
+            </select>
+
+            <button class="btn btn-primary" type="submit">Registreren</button>
+        </form>
+        <div class="auth__footer"></div>
+            <p id="error-message"></p>
+            <p>Heb je al een account? <a href="#" id="loginLink">Log in</a></p>
+        </div>
+    </section>
+

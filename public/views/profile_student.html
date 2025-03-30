@@ -1,0 +1,79 @@
+<main class="profile">
+    <div class="profile__container">
+        <!-- Avatar Sectie -->
+        <div class="profile__avatar">
+            <label for="avatarUpload" class="profile__avatar-label">
+                <img id="avatar" class="profile__avatar-image" alt="">
+            </label>
+            <input type="file" id="avatarUpload" class="profile__avatar-input" accept="image/*">
+        </div>        
+        <h2 id="nickname" class="profile__name"></h2>
+    
+        <!-- Persoonlijke Informatie -->
+        <!-- Persoonlijke Informatie -->
+        <div class="profile__info-card">
+            <p class="profile__info-item">
+                <span class="material-icons profile__info-icon">mail</span>
+                <span id="email"></span>
+            </p>
+            <p class="profile__info-item">
+                <span class="material-icons profile__info-icon">school</span>
+                <span id="school"></span>
+            </p>
+            <p class="profile__info-item">
+                <span class="material-icons profile__info-icon">explore</span>
+                <span id="richting"></span>
+            </p>
+            <p class="profile__info-item">
+                <span class="material-icons profile__info-icon">grade</span>
+                <span id="grade"></span>
+            </p>
+        </div>
+
+        <!-- Badge Container -->
+        <div class="badge-container" id="badgeContainer">
+            <!-- Badges will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Quiz Statistieken -->
+    <div class="profile__stats">
+        <div class="stats__card">
+            <h3>Vervolledigde Quizzes</h3>
+            <p id="completedQuizzes">0</p>
+        </div>
+        <div class="stats__card">
+            <h3>Aantal Attempts</h3>
+            <p id="totalAttempts">0</p>
+        </div>
+        <div class="stats__card">
+            <h3>Gemiddelde Score</h3>
+            <p id="avgScore">0</p>
+        </div>
+        <div class="stats__card">
+            <h3>Beste Score</h3>
+            <p id="bestScore">-</p>
+        </div>
+        <div class="stats__card">
+            <h3>Huidige Ranking</h3>
+            <p id="currentRanking">-</p>
+            <div class="popover-container">
+                <span class="popover"> 
+                    <span class="material-icons popover__icon">info</span>
+                    <span id="leaguePopoverContent" class="popover__content">
+                        Laden...
+                    </span>
+                </span>
+            </div>
+
+        </div>
+        <div class="stats__card">
+            <h3>XP Punten</h3>
+            <p id="xpPoints">0</p>
+        </div>
+        <div class="stats__card">
+            <h3>Qbits</h3>
+            <p id="qbits">0</p>
+        </div>
+    </div>
+</main>

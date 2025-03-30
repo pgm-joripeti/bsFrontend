@@ -1,0 +1,119 @@
+.alert-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 9999;
+    background: var(--purple-200);
+    border-radius: var(--border-radius_large);
+    padding: var(--padding_xl);
+    max-width: 420px;
+    width: 90%;
+    box-shadow: var(--shadow-normal);
+    opacity: 1;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--margin_m);
+}
+
+.alert-modal.hidden {
+    display: none;
+}
+
+#alertModalButtons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--margin_xs);
+}
+
+#alertModalText {
+    font-size: var(--line-height-title);
+    margin-bottom: var(--margin-m);
+    color: var(--purple-800);
+}
+
+#alertModalCloseBtn {
+    margin-top: var(--margin_xl);
+    transform: translateX(1rem);
+}
+
+.alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.45); /* 45% donkere layer */
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--box-shadow-normal);
+}
+
+@keyframes wobbleInAlert {
+    0% {
+      transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
+      opacity: 0;
+    }
+    20% {
+      transform: translate(-50%, -50%) scale(1.02) rotate(1deg);
+    }
+    40% {
+      transform: translate(-50%, -50%) scale(0.98) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-50%, -50%) scale(1.01) rotate(0.6deg);
+    }
+    80% {
+      transform: translate(-50%, -50%) scale(0.99) rotate(-0.4deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes wobbleOutAlert {
+    0% {
+      transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      opacity: 1;
+    }
+    20% {
+      transform: translate(-50%, -50%) scale(0.98) rotate(1deg);
+      opacity: 1;
+    }
+    40% {
+      transform: translate(-50%, -50%) scale(1.01) rotate(-1deg);
+      opacity: 1;
+    }
+    60% {
+      transform: translate(-50%, -50%) scale(0.97) rotate(0.6deg);
+      opacity: 1;
+    }
+    80% {
+      transform: translate(-50%, -50%) scale(1.03) rotate(-0.4deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0.9) rotate(-2deg);
+      opacity: 0;
+    }
+  }
+  
+  
+  .wobble-in--alert {
+    animation: wobbleInAlert 0.8s ease forwards;
+  }
+  
+  .wobble-out--alert {
+    animation: wobbleOutAlert 0.6s ease forwards;
+  }
+  
+  

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Brainsmash</title>
+
+  <script>
+    window.MathLive = {
+      fontsDirectory: '/mathlive/fonts/'
+    };
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6S8HD2HPNK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6S8HD2HPNK');
+  </script>
+  
+  
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- omdat mathlive en vite weigeren samen te werken, hier in CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/mathlive@0.103.0/dist/mathlive.min.js"></script>
+  <script>
+    MathfieldElement.fontsDirectory = 'https://cdn.jsdelivr.net/npm/mathlive@0.103.0/dist/fonts';
+  </script>
+
+  <!-- entry point -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

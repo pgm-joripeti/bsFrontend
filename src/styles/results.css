@@ -1,0 +1,36 @@
+.results-container {
+    margin-top: 6rem;
+}
+
+.results-section {
+    background-color: var(--purple-600);
+    padding: var(--padding_xs) var(--padding_xl) var(--padding_xl) var(--padding_xl);
+    border-radius: var(--border-radius_large);
+    box-shadow: var(--shadow-normal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--margin_xs);
+}
+
+.results__score {
+    color: var(--yellow-500);
+    font-family: var(--title-font);
+    font-size: var( --font-size-title);
+    font-weight: bold;
+}
+.results__stats-container {
+    color: var(--grey-200);
+    font-family: var(--text-font);
+    font-size: var( --font-size-title);
+    background-color: var(--purple-800);
+    padding: var(--padding_m) var(--padding_xl);
+    border-radius: var(--border-radius_medium);
+}
+
+#xp, #qbits {
+    font-family: var(--title-font);
+    font-size: var( --font-size-title);
+    font-weight: bold;
+    color: var(--yellow-500);
+}

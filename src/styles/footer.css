@@ -1,0 +1,91 @@
+#footer {
+  position: relative;
+  width: 100%;
+  background-color: var(--purple-800);
+  padding: var(--padding_m); 
+  text-align: center;
+  font-size: var(--font-size-text);
+  color: var(--grey-400);
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  gap: var(--margin_m);
+  flex-shrink: 0;
+  margin-top: var(--margin_xl);
+}
+
+.footer__right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: var(--margin_xl);
+  margin-right: calc(var(--margin_xl)*2);
+}
+
+@media (max-width: 81rem) {
+  .footer__right {
+    margin-right: var(--margin_xl);
+    gap: var(--margin_s);
+  }
+}
+
+#footer p {
+  margin: 0; /* Voorkomt ongewenste marges */
+}
+
+#footer a {
+  text-decoration: none;
+  color: var(--grey-200);
+  font-weight: var(--medium-font);
+}
+
+#footer a:hover {
+  color: var(--yellow-400);
+}
+
+.spectrumContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--margin_xs);
+    position: relative;
+}
+
+.logo--spectrum-link--student img,
+.logo--spectrum-link--teacher img {
+    border-radius: 40%;
+    width: 5rem;
+    margin: 0;
+    transform: translateY(.2rem);
+  }
+
+.logo--spectrum-link--student,
+.logo--spectrum-link--teacher {
+    display: inline-block;
+  }
+
+.logo--spectrum-link--student:hover,
+.logo--spectrum-link--teacher:hover {
+    cursor: pointer;
+  }
+  
+.logo--spectrum-link--student:hover .logo--spectrum,
+.logo--spectrum-link--teacher:hover .logo--spectrum {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.promoTag--spectrum {
+  background-color: var(--spectrum--blue);
+  padding: var(--padding_xs) var(--padding_m);
+  border-radius: var(--border-radius_medium);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  color: var(--grey-100);
+  font-weight: var(--medium-font);
+  text-decoration: none;
+}
+
+

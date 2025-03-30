@@ -1,0 +1,144 @@
+.share-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: var(--radius-m);
+    background-color: var(--purple-600);
+    text-align: center;
+    border: 2px dashed var(--green-600);
+    max-width: 500px;
+}
+
+.share-component__label {
+    font-weight: bold;
+    margin-bottom: var(--margin_s);
+    color: var(--green-600);
+}
+
+.share-component__icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: var(--margin_xl);
+    flex-wrap: wrap;
+}
+
+.share-component__icons .material-icons {
+    font-size: 2rem;
+    color: var(--green-600);
+    cursor: pointer;
+}
+
+.share-component__icons svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--green-600);
+}
+
+.share-component__icons .material-icons:hover {
+    transform: scale(1.2);
+    color: var(--color-highlight);
+}
+
+.share-frame-wrapper {
+    position: absolute;
+    top: -9999px;
+    left: 0;
+    padding: 2rem;
+    background-color: var(--purple-600);
+    border-radius: var(--radius-m);
+    z-index: -1;
+}
+
+.share-frame-wrapper * {
+    overflow: visible !important;
+}
+
+.share-frame-logo {
+    width: 70px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Caption ONDERAAN */
+.share-frame-caption {
+    margin-top: var(--margin_m);
+    background: transparent;
+    color: var(--grey-200);
+    font-weight: bold;
+    font-size: var(--font-size-text);
+    text-align: center;
+}
+
+.share-frame-content {
+    position: relative;
+    background: var(--purple-600);
+    padding: 3rem 2rem 2rem 2rem; /* ⬅ top extra ruimte */
+    border-radius: var(--radius-m);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--margin_l);
+    min-height: auto;
+}
+
+/* Geen extra rand rond canvas */
+canvas {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 5px var(--green-500)); }
+    50%      { filter: drop-shadow(0 0 15px var(--green-500)); }
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    fill: var(--green-500); /* indien inline SVG met fill */
+    filter: brightness(1.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.share-instagram-btn {
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+
+.share-screenshot-btn svg {
+    width: 30px;
+    height: 30px;
+}
+
+.share-instagram-btn:hover .social-icon {
+    transform: scale(1.2);
+    fill: var(--grey-200);
+}
+
+/* Responsive gedrag */
+@media (max-width: 600px) {
+    .share-component {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .share-component__icons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+.share-screenshot-btn, 
+.copy-share-text-btn, 
+.mobile-share-btn {
+    margin: 0;
+    width: 17rem;
+}

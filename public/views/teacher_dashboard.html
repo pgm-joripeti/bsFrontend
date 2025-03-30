@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Quizzes</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <main>
+        <h1>Mijn Quizzes</h1>
+        <input type="text" id="searchInput" placeholder="Zoek een quiz...">
+        <table>
+            <thead>
+                <tr>
+                    <th>Titel</th>
+                    <th>Moeilijkheidsgraad</th>
+                    <th>Richting</th>
+                    <th>Acties</th>
+                </tr>
+            </thead>
+            <tbody id="quizTable"></tbody>
+        </table>
+        <button onclick="window.location.href='teacher_create_quiz.html'">Nieuwe Quiz</button>
+    </main>
+    <script src="../scripts/teacher_dashboard.js"></script>
+</body>
+</html>

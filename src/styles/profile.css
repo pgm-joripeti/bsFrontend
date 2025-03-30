@@ -1,0 +1,148 @@
+/* teacher profile */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--margin_xl);
+}
+
+.profile__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--purple-800);
+    padding: var(--padding_xl);
+    border-radius: var(--border-radius_large);
+    box-shadow: var(--shadow-normal);
+}
+
+.profile__avatar-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* 🔥 Maak de avatar zelf klikbaar */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--purple-700); /* Neutrale achtergrondkleur */
+    box-shadow: 0rem 0rem 0rem 0.25rem var(--purple-200);
+    transition: all 0.2s ease-in-out;
+}
+
+.profile__avatar-label:hover {
+    transform: scale(115%);
+    box-shadow: 0rem 0rem 0rem 0.1rem var(--purple-500);
+}
+
+.profile__avatar-image {
+    width: 150px;
+    height: 150px;
+    color: var(--grey-200);
+    object-fit: cover; /* Zorg dat de afbeelding correct wordt geschaald */
+    display: block;
+    border: none;
+}
+
+.profile__name {
+    color: var(--yellow-500);
+}
+
+.profile__avatar-icon {
+    font-size: 100px; /* 🔥 Maak het Material Icon groter */
+    color: var(--yellow-500);
+    display: block;
+}
+
+/* we maken de default UI voor file uploads onzichtbaar */
+.profile__avatar-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.profile__info-card {
+    padding: 0 var(--padding_xs);
+    margin-bottom: var(--margin_xl);
+    color: var(--grey-200);
+    text-align: center;
+    font-size: var(--font-size-text);
+    display: flex;
+    flex-direction: row;
+    gap: var(--margin_m);
+    font-size: var(--font-size-gamification);
+}
+
+@media (max-width: 851px) {
+    .profile__container {
+        padding: var(--padding_xl) 0 0 0;
+    }
+    .profile__info-card {
+        visibility: hidden;
+    }
+}
+
+.profile__stats-title {
+    font-size: var(--font-size-title);
+    color: var(--grey-200);
+}
+
+.profile__stats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--padding_s);
+    width: 100%;
+}
+
+.stats__card {
+    background: var(--purple-800);
+    padding: var(--padding_m);
+    border-radius: var(--border-radius_medium);
+    box-shadow: var(--shadow-normal);
+    text-align: center;
+    color: var(--grey-200);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    min-width: 15rem;
+}
+
+.stats__card:hover {
+    transform: scale(1.05);
+    box-shadow: 0rem 0rem 0rem 0.05rem var(--yellow-600);
+}
+
+.stats__card h3 {
+    font-size: var(--font-size-text);
+    color: var(--yellow-500);
+}
+
+.stats__card p {
+    font-size: var(--font-size-title);
+    font-weight: bold;
+    color: var(--grey-300);
+}
+
+.profile__info-item {
+    display: flex;
+    align-items: center;       /* Verticaal centreren van icon + tekst */
+    gap: var(--margin_xs);              /* Afstand tussen icon en tekst */
+    color: var(--grey-200);
+    font-size: calc(var(--font-size-text)/1.2);
+    margin: var(--margin_xs) 0;
+  }
+  
+  .profile__info-icon {
+    font-size: calc(var(--font-size-text)*1.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

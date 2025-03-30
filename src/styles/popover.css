@@ -1,0 +1,135 @@
+.popover-container {
+    display: flex;
+    flex-direction: row; /* Popovers naast elkaar */
+    width: 100%;
+    gap: var(--margin_s); /* Ruimte tussen de popovers */
+    position: relative; /* Zorgt ervoor dat popovers relatief aan deze container blijven */
+    justify-content: flex-end; /* Zorgt dat de popovers rechts staan */
+}
+
+.popover {
+    position: relative; /* Verwijder absolute positioning zodat ze zich normaal gedragen */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 90000 !important;
+}
+
+.popover__content {
+    z-index: 90000 !important;
+  }  
+
+.compensate_popover {
+    transform: translateY(-1.5rem);
+}
+
+.popover .material-icons {
+    font-size: var(--font-size-text);
+    color: var(--grey-200);
+    transition: color 0.2s ease-in-out;
+    background: var(--purple-400);
+    padding: calc(var(--padding_xs)/4);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer; /* Handig voor mobiel */
+}
+
+.popover:hover .material-icons {
+    color: var(--purple-200);
+}
+
+/* Popover content met betere positionering */
+.popover__content,
+.popover__content.league {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background: var(--purple-400--transparent);  /* Semi-transparante purple achtergrond */
+    color: var(--grey-200);
+    text-align: center;
+    border-radius: var(--border-radius_large);
+    padding: var(--padding_s) var(--padding_m);
+    position: absolute;
+    z-index: 99999 !important; /* 🧠 Altijd boven shine, cards, animaties */
+    top: calc(100% + 8px); /* Zorgt dat popover net onder het icoon zit */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    font-size: var(--font-size-gamification);
+    white-space: nowrap;
+    box-shadow: var(--shadow-elevated); /* Material UI elevation */
+}
+
+/* Pijltje boven de popover */
+.popover__content::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;  /* Zorgt dat het pijltje bovenaan staat */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent var(--purple-400--transparent) transparent;
+}
+
+.popover:hover .popover__content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* league variant van popover */
+.popover-container.league {
+    position: absolute;
+    top: var(--padding_s);
+    right: var(--padding_s);
+    z-index: 3; /* boven shine */
+  }
+
+  .popover__icon.league {
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--primary-color);
+  }
+  
+  .popover__content.league {
+    visibility: hidden;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 99;
+  }
+  
+  .popover:hover .popover__content.league {
+    visibility: visible;
+  }
+
+  /* voor onze popoverManager: popovers boven alles zetten (via append aan body) */
+  .popover__floating {
+    position: absolute;
+    background: var(--purple-400--transparent);
+    color: var(--grey-200);
+    text-align: center;
+    border-radius: var(--border-radius_large);
+    padding: var(--padding_s) var(--padding_m);
+    font-size: var(--font-size-gamification);
+    white-space: nowrap;
+    box-shadow: var(--shadow-elevated);
+    transform: translate(-50%, 1.5rem);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2147483647;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    isolation: isolate;
+}
+
+.popover__floating.visible {
+    opacity: 1;
+    transform: translate(-50%, 2.25rem);
+}

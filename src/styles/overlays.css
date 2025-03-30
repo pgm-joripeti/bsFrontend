@@ -1,0 +1,36 @@
+/* Overlay komt tussen background en content */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; /* Zorg dat deze achter je main content zit */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.overlay__rays {
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    top: -75%;
+    left: -75%;
+    background: repeating-conic-gradient(
+        var(--purple-200) 0deg 10deg,
+        var(--purple-400) 10deg 20deg
+    );
+    animation: rotateRays 60s linear infinite;
+    opacity: 0.09;
+    mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
+}
+
+@keyframes rotateRays {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

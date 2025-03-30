@@ -1,0 +1,143 @@
+#leaderboard-container {
+    width: 100%;
+    margin: auto;
+    padding: var(--padding_m);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--margin_m);
+}
+
+@media (max-width: 35rem) {
+    #leaderboard-container, .leaderboard-entry {
+        padding: var(--padding_xs);
+    }
+}
+
+/* League Info */
+#league-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    margin: var(--margin_m) 0 0 0;
+    width: 100%;
+}
+
+#league-logo {
+    width: 10rem;
+    height: auto;
+}
+
+.leaderboard-left {
+    display: flex;
+    align-items: center;
+    gap: var(--margin_s);
+}
+
+.leaderboard-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-right: 5rem; 
+}
+
+/* Leaderboard Card Layout */
+.leaderboard-entry {
+    max-width: 35rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: var(--margin_s);
+    align-items: center;
+    justify-content: space-between;
+    background: var(--purple-800);
+    color: var(--grey-200);
+    padding: var(--padding_m);
+    border-radius: var(--border-radius_large);
+    box-shadow: var(--shadow-elevated);
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+@media (max-width: 531px) {
+    .leaderboard-entry {
+        padding: var(--padding_xs);
+        position: relative;
+    }
+}
+
+.leaderboard-entry:hover {
+    transform: scale(1.03);
+    background: var(--purple-600);
+}
+
+/* Inhoud van leaderboard netjes opgespannen */
+.leaderboard-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: var(--margin_s);
+    position: relative;
+    z-index: 2; /* boven glans */
+  }
+
+/* Avatar */
+.leaderboard-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--purple-400);
+}
+
+/* Avatar Fallback */
+.leaderboard-avatar[data-empty="true"] {
+    background: url("/public/icons/person.svg") no-repeat center center;
+    background-size: cover;
+}
+
+/* Positie Nummer */
+.leaderboard-position {
+    font-size: var(--font-size-text);
+    font-weight: var(--fat-font);
+    color: var(--yellow-400);
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Nickname */
+.leaderboard-nickname {
+    font-size: var(--font-size-text);
+    font-weight: var(--medium-font);
+    flex-grow: 1;
+    text-align: center;
+    margin-left: var(--margin_s);
+}
+
+/* XP, Qbits, Attempts */
+.leaderboard-stats {
+    display: flex;
+    gap: var(--margin_s);
+    font-size: var(--font-size-gamification);
+}
+
+/* Highlighted User */
+.highlighted-user {
+    background: var(--green-600);
+    font-weight: bold;
+    position: relative;
+}
+
+#league-name {
+    margin-bottom: 5rem;
+}
+
+#league-info h2 {
+    margin-bottom: 0
+}
+
+#user-ranking {
+    color: var(--yellow-500);
+}

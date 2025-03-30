@@ -1,0 +1,132 @@
+/* container voor 2 knopppen op quiz cards */
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--margin_xs);
+}
+
+/* Algemene knopstijl */
+.btn {
+    font-family: var(--text-font);
+    font-size: var(--font-size-text);
+    color: var(--grey-200);
+    padding: var(--padding_m);
+    border: none;
+    border-radius: var(--border-radius_extra-large);
+    cursor: pointer;
+    width: 80%;
+    margin: var(--margin_xl) 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover en Active effecten */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--purple-700);
+}
+
+.btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px var(--purple-800);
+}
+
+/* Paarse variant (normale knoppen) */
+.btn-primary,
+.btn-search {
+    background: var(--purple-600);
+    min-width: fit-content;
+}
+
+.btn-primary:hover,
+.btn-search:hover {
+    background: var(--purple-500);
+}
+
+.btn-primary:active,
+.btn-search:active {
+    background: var(--purple-600);
+}
+
+/* Groene variant (voor quiz-card knoppen) */
+.btn-success {
+    background: var(--green-600);
+    width: fit-content; /* Specifiek voor quiz-card knoppen */
+    min-width: 9rem;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background: var(--green-500);
+    box-shadow: 0 0 0.075rem var(--green-700); 
+    transform: none;
+}
+
+.btn-success:active {
+    transform: scale(0.99);
+    background: var(--green-600);
+    box-shadow: 0 0.125rem 0.3125rem var(--green-800);
+}
+
+/* Gele variant (voor create quiz knoppen) */
+.btn-secondary {
+    background: var(--yellow-500);
+    width: fit-content; 
+    cursor: pointer;
+    color: var(--yellow-800);
+}
+
+.btn-secondary:hover {
+    background: var(--yellow-400);
+    box-shadow: 0 0 0.075rem var(--yellow-800); 
+    transform: none;
+}
+
+.btn-secondary:active {
+    transform: scale(0.99);
+    background: var(--yellow-600);
+    box-shadow: 0 0.125rem 0.3125rem var(--yellow-800);
+}
+
+.btn-alert {
+    background: var(--red-600);
+    width: fit-content; /* Specifiek voor quiz-card knoppen */
+    cursor: pointer;
+}
+
+.btn-alert:hover {
+    background: var(--red-500);
+    box-shadow: 0 0 0.075rem var(--red-700); 
+    transform: none;
+}
+
+.btn-alert:active {
+    transform: scale(0.99);
+    background: var(--red-600);
+    box-shadow: 0 0.125rem 0.3125rem var(--red-800);
+}
+
+/* Pas quiz-card knoppen aan zodat ze correct werken */
+.quiz-card button {
+    display: block;
+    text-align: center;
+}
+
+/* Specifiek voor de quiz-card knop */
+.quiz-card .btn {
+    width: 100%; /* Knoppen in quiz-card moeten de volledige breedte nemen */
+}
+
+/* remove question button in create quiz vaste breedte geven */
+.removeQuestionBtn {
+    min-width: 15rem;
+    max-width: 15rem;
+}
+
+.addCorrectAnswerBtn {
+    min-width: 15rem;
+    max-width: 25rem;
+}
+

@@ -1,0 +1,186 @@
+#quizForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.createquiz-container {
+    width: 100%;
+    margin: 0 auto; /* ✅ Dit centreert alles horizontaal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--margin_l);
+  }
+  
+.vraag-blok {
+    background-color: var(--purple-700);
+    border-radius: var(--border-radius_large);
+    padding: var(--padding_l);
+    box-shadow: var(--shadow-normal);
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin_m);
+    position: relative;
+  }
+  
+  .vraag-titel {
+    font-family: var(--title-font);
+    font-size: calc(var(--font-size-title) * 0.9);
+    color: var(--grey-200);
+    margin-bottom: var(--margin_s);
+  }
+  
+  /* Container voor snippets (code, math, excel, image...) */
+  .snippet-container {
+    width: 100%;
+    max-width: 100%; /* ✅ voorkomt dat het breder wordt dan de parent */
+    background-color: var(--purple-600);
+    padding: var(--padding_m);
+    border-radius: var(--border-radius_medium);
+    box-shadow: var(--shadow-default);
+    margin-top: var(--margin_s);
+    box-sizing: border-box; /* ✅ zorgt dat padding binnen de breedte blijft */
+    overflow-x: auto; /* ✅ voorkomt overflow */
+  }
+  
+
+  .snippet-container:empty {
+    display: none;
+  }  
+  
+  /* Preview image stijl */
+  .image-snippet__preview {
+    margin-top: var(--margin_s);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--purple-800);
+    padding: var(--padding_s);
+    border-radius: var(--border-radius_medium);
+    box-shadow: var(--shadow-normal);
+  }
+  
+  .image-snippet__thumb {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: var(--border-radius_small);
+  }
+  
+  /* Tijdslimiet onderaan */
+  .timelimit-wrapper {
+    margin-top: var(--margin_m);
+    padding-top: var(--padding_s);
+    border-top: 1px solid var(--purple-400);
+  }
+  
+  /* Verwijderknop */
+  .removeQuestionBtn {
+    align-self: flex-end;
+    margin-top: var(--margin_s);
+    font-family: var(--text-font);
+  }
+  
+  /* Mathlive veld binnen snippets */
+  math-field {
+    background: var(--purple-200);
+    border-radius: var(--border-radius_small);
+    padding: var(--padding_s);
+    font-size: var(--font-size-text);
+    color: var(--purple-800);
+    width: 100%;
+    max-width: 100%; /* ✅ voorkom overflow */
+    box-sizing: border-box;
+  }
+  
+  /* Code en Excel snippet velden */
+  textarea[id^="codeSnippet"],
+  textarea[id^="excelSnippet"] {
+    background: var(--purple-200);
+    color: var(--purple-800);
+    font-family: var(--font-code);
+    font-size: var(--font-size-text);
+    border-radius: var(--border-radius_small);
+    padding: var(--padding_s);
+    border: none;
+    resize: vertical;
+    min-height: 6rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  textarea[id^="codeSnippet"]::placeholder,
+  textarea[id^="excelSnippet"]::placeholder {
+    color: var(--purple-800);
+    font-family: var(--font-code);
+    font-size: var(--font-size-text);
+    padding: var(--padding_s);
+    min-height: 6rem;
+  }
+
+#vragenContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin_xl);
+}
+
+#vragenContainer, .vraag-blok, .addquestion-wrapper {
+    border-radius: var(--border-radius_medium);
+}
+  
+.createquiz-header,
+.vraag-blok {
+  width: 100%;
+  margin: 0;
+}
+
+.createquiz-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding_xl) 0 calc(var(--padding_xl)*2) 0;
+}
+
+.createquiz-header-container {
+  width: 80%;
+  max-width: 61rem;
+}
+
+.image-snippet__icon {
+    font-size: 2rem;
+    color: var(--yellow-400);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .image-snippet__icon:hover {
+    color: var(--yellow-300);
+  }
+
+  [id^="optionsContainer"] {
+    margin-top: var(--margin_s);
+    padding: var(--padding_m);
+    background-color: var(--purple-600); /* subtiel verschil met vraagblok */
+    border-radius: var(--border-radius_medium);
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin_s); /* zorgt voor consistente spacing */
+    box-shadow: var(--shadow-soft);
+  }
+  
+  [id^="optionsContainer"] input {
+    background-color: var(--purple-300);
+    border: 1px solid var(--purple-400);
+    padding: var(--padding_s);
+    border-radius: var(--border-radius_small);
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+ [id^="optionsContainer"] input:focus {
+    border-color: var(--yellow-400);
+    outline: none;
+    box-shadow: var(--input-glow);
+  }
+  
+  

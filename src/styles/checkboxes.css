@@ -1,0 +1,33 @@
+/* Algemene checkbox styling voor alle checkboxes */
+input[type="checkbox"] {
+    width: 1.5rem; /* Grotere breedte */
+    height: 1.5rem; /* Grotere hoogte */
+    appearance: none; /* Standaard browserstijl verwijderen */
+    border: var(--border-width--m) solid var(--yellow-500);
+    border-radius: var(--border-radius_small);
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Wanneer een checkbox wordt aangevinkt */
+input[type="checkbox"]:checked {
+    background-color: var(--yellow-500);
+    border-color: var(--purple-600);
+    position: relative;
+}
+
+/* Vinkje toevoegen bij aangevinkte checkbox */
+input[type="checkbox"]:checked::after {
+    content: "✔"; /* Unicode voor een checkmark */
+    font-size: var(--font-size-text);
+    color: var(--purple-600);
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,37 @@
+<div id="quiz-container">
+    <!-- PROGRESSIE -->
+    <section class="quiz__progress">
+      <div id="progress-bar">
+        <div id="progress" style="width: 0%;"></div>
+      </div>
+    </section>
+  
+    <!-- VRAAG -->
+    <section class="quiz__question">
+      <div class="quiz__question__top">
+        <p id="timer">
+          Tijd: <span id="timeLeft"></span>s
+        </p>
+      </div>
+  
+      <div class="quiz__question__content">
+        <h1 id="questionText">Laden...</h1>
+        <div class="quiz__question__actions">
+          <i id="speakBtn" class="material-icons">volume_up</i>
+          <button id="aiTipBtn" class="ai-tip-btn">
+            <i class="material-icons">lightbulb</i>
+          </button>
+        </div>
+      </div>
+  
+      <div id="snippet" class="question-snippet"></div>
+    </section>
+  
+    <!-- ANTWOORD -->
+    <section class="quiz__answer">
+      <div id="answers"></div>
+      <button id="next-question-btn" class="btn btn-primary">Volgende Vraag</button>
+      <p id="feedback"></p>
+    </section>
+  </div>
+  

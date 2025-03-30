@@ -1,0 +1,54 @@
+<main class="profile">
+    <!-- <h1 class="profile__title">Mijn Profiel</h1> -->
+    
+    <div class="profile__container">
+        <!-- Avatar Sectie -->
+        <div class="profile__avatar">
+            <label for="avatarUpload" class="profile__avatar-label">
+                <img id="avatar" class="profile__avatar-image" alt="">
+                <i id="avatarIcon" class="material-icons profile__avatar-icon">person</i>
+            </label>
+            <input type="file" id="avatarUpload" class="profile__avatar-input" accept="image/*">
+        </div>
+        <h2 id="nickname" class="profile__name">Leerkracht</h2>
+    
+        <!-- Persoonlijke Informatie -->
+        <!-- Persoonlijke Informatie -->
+        <div class="profile__info-card">
+            <p class="profile__info-item">
+                <span class="material-icons profile__info-icon">mail</span>
+                <span id="email"></span>
+            </p>
+            <p class="profile__info-item">
+                <span class="material-icons profile__info-icon">school</span>
+                <span id="school"></span>
+            </p>
+            <p class="profile__info-item">
+                <span class="material-icons profile__info-icon">explore</span>
+                <span id="program"></span>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Quiz Statistieken -->
+    <!-- <h2 class="profile__stats-title">Quiz Statistieken</h2> -->
+    <div class="profile__stats">
+        <div class="stats__card">
+            <h3>Aangemaakte Quizzes</h3>
+            <p id="totalQuizzes">0</p>
+        </div>
+        <div class="stats__card">
+            <h3>Aantal Attempts</h3>
+            <p id="totalAttempts">0</p>
+        </div>
+        <div class="stats__card">
+            <h3>Gemiddelde Score</h3>
+            <p id="avgScore">0</p>
+        </div>
+        <div class="stats__card">
+            <h3>Best Presterende Quiz</h3>
+            <p id="bestQuiz">-</p>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,232 @@
+.no-badges {
+    color: var(--grey-200);
+}
+
+.badge-container {
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--margin_xs);
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge--new-container {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin_xs);
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 851px) {
+    .badge-container {
+        transform: translateY(-70px);
+    }
+}
+
+.badge {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem; /* Alle badges exact even groot */
+    height: 8rem;
+    flex-shrink: 0;
+    border: var(--purple-400) solid var(--border-width--s);
+    border-radius: 50%;
+    overflow: visible; /* Zorgt ervoor dat de popover niet wordt afgesneden */
+    transition: all 1s ease-in-out;
+}
+
+@media (max-width: 851px) {
+    .badge {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+.badge--new {
+    margin: var(--margin_s);
+}
+
+.badge__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ✅ Correcte positie van het info-icoon rechtsboven */
+.badge .popover-container {
+    position: absolute;
+    top: 0; /* Zorgt dat het icoon tegen de bovenrand staat */
+    right: 0; /* Zorgt dat het icoon tegen de rechterrand staat */
+    transform: translate(30%, -30%); /* Beetje buiten de badge laten uitsteken */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+/* ✅ Styling van de info-icon */
+.badge .popover .material-icons {
+    font-size: var(--font-size-text);
+    background: var(--purple-400);
+    padding: calc(var(--padding_xs) / 2);
+    border-radius: 50%;
+    color: var(--grey-200);
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.badge .popover .material-icons:hover {
+    color: var(--purple-200);
+    transform: scale(1.1);
+}
+
+/* overlay voor nieuw verdiende badges */
+.badge-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.85);
+    display: flex;
+    align-items: center;      /* ✅ verticaal centreren */
+    justify-content: center;  /* ✅ horizontaal centreren */
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .badge-overlay.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .badge-overlay__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* ✅ horizontale centrering binnenin */
+    text-align: center;
+  }
+  
+  .badge-overlay__animation-wrapper {
+    display: inline-block;
+    animation: wobble-in-glory 0.9s ease-out;
+  }
+  
+  .badge-overlay__animation-wrapper.wobble-out {
+    animation: wobble-out 0.6s ease-in forwards;
+  }
+  
+  .badge-overlay__image {
+    width: 12.5rem;
+    height: 12.5rem;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+  
+  .badge-overlay__text {
+    color: var(--grey-200);
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fade-in-text 1s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes fade-in-text {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  @keyframes pop-in-glory {
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.4);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .glow-once {
+    animation: glow-once 1.5s ease-out forwards;
+  }
+  
+  
+  @keyframes glow-once {
+    0% {
+      box-shadow: 0 0 0 rgba(255, 223, 0, 0.3), 0 0 0.1rem white;
+    }
+    40% {
+      box-shadow: 0 0 0.6rem rgba(255, 223, 0, 0.4), 0 0 0.2rem white;
+    }
+    80% {
+      box-shadow: 0 0 0.9rem rgba(255, 223, 0, 0.6), 0 0 0.3rem white;
+    }
+    100% {
+      box-shadow: 0 0 0.5rem rgba(255, 223, 0, 0.3), 0 0 0.15rem white;
+    }
+  }
+  
+  @keyframes wobble-in-glory {
+    0% {
+      transform: scale(0.3) rotate(0deg);
+      opacity: 0;
+    }
+    30% {
+      transform: scale(1.2) rotate(-5deg);
+      opacity: 1;
+    }
+    60% {
+      transform: scale(1.05) rotate(3deg);
+    }
+    80% {
+      transform: scale(1.1) rotate(-2deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }  
+
+  @keyframes wobble-out {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    25% {
+      transform: rotate(-3deg) scale(1.05);
+    }
+    50% {
+      transform: rotate(3deg) scale(1.05);
+    }
+    75% {
+      transform: rotate(-2deg) scale(0.95);
+    }
+    100% {
+      transform: scale(0.4);
+      opacity: 0;
+    }
+  }  
+  
+  .hidden {
+    display: none;
+  }
+  

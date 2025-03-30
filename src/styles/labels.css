@@ -1,0 +1,38 @@
+/* labels bij input*/
+.label {
+    font-weight: bold;
+    padding: var(--padding_xs) var(--padding_s);
+    border-radius: var(--border-radius_medium);
+    display: inline-block;
+    margin-top: var(--margin_l);
+}
+
+.yellow {
+    background-color: var(--yellow-400);
+    color: var(--yellow-800);
+}
+
+.green {
+    background-color: var(--green-400);
+    color: var(--green-800);
+}
+
+.red {
+    background-color: var(--red-400);
+    color: var(--red-800);
+}
+
+.gray {
+    background-color: var(--grey-400);
+    color: var(--grey-700);
+}
+
+/* tag divs */
+.tag {
+    font-family: var(--title-font);
+    font-size: var(--font-size-gamification);
+    padding: var(--padding_xs) var(--padding_s);
+    font-weight: var(--medium-font);
+    border-radius: var(--border-radius_medium);
+    display: inline-block;
+}

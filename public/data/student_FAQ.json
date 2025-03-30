@@ -1,0 +1,46 @@
+[
+    {
+        "question":"Hoe werken leagues in de BRAINSMASH competitie?",
+        "answer": "BRAINSMASH kent 5 leagues: Wodan, Bigfoot, Sphinx, Witte Wieven, en de Kabouter league. Elke eerste dag van de week kennen we een league toe aan elke deelnemer. Dit gebeurt willekeurig. We streven een maximum van 30 deelnemers per league na. Mocht het aantal deelnemers groter dan 50 worden, maken we leagues bij, zodat het evenwicht bewaard blijft."
+    },
+    {
+        "question":"Hoe verdien ik XP punten?",
+        "answer": "Bij elke volledig afgewerkte quiz verdien je 2 XP punten, ongeacht jouw resultaat."
+    },
+    {
+        "question":"Hoe verdien ik Qbits?",
+        "answer": "Bij elk correct antwoord ontvang je 1 QBit. Je kan ook QBits kopen aan 10 cent per Qbit. Alle opbrengst gaat naar de vzw Vrienden van Het Spectrum, om minder gegoede leerlingen de kans te geven om deel te nemen aan extra muros activiteiten."
+    },
+    {
+        "question":"Hoe kan ik AI tips gebruiken?",
+        "answer": "Bij elke vraag kan je een AI tip verkrijgen. Hiervoor betaal je 30 Qbits."
+    },
+    {
+        "question":"Wie kan meedoen met de BRAINSMASH competitie?",
+        "answer": "Iedere leerling van een school die opgelijst wordt in het registratie scherm"
+    },
+    {
+        "question":"Wat en wie is BRAINSMASH?",
+        "answer": "BRAINSMASH is het geesteskind van Joris Petillion, leerkracht informatica aan Het Spectrum in Gent. Het werd grotendeels ontwikkeld door dhr Petillion, met hulp van zijn leerlingen in de klassen 5AD en 6AD (Applicatie en Databeheer): Artun Gürkan, Noah Huylebroeck, Noa Picavet, Faruk Emre Sahin, Aline Yoshinari, Arne Meeus, Ignace Vermeulen, Summiya Yousaf, en Seyyidhan Asildas. De leerlingen AD onderhouden de website."
+    },
+    {
+        "question":"Waarom bestaat BRAINSMASH?",
+        "answer": "Joris Petillion startte deze quiz competitie om de opleiding appllicatie en databeheer aan de Gentse technische school Het Spectrum in de verf te zetten. We hopen op deze manier onze programmeer opleiding te kunnen uitbreiden. Het Spectrum is een fantastische school, en al zeker als je wilt leren programmeren!"
+    },
+    {
+        "question":"Wat is de tech stack van BRAINSMASH?",
+        "answer": "De BRAINSMASH app is een SPA (single page application) MVC (model-view-control) project geschreven in vanilla JavaScript, HTML en CSS. Het project draait op een express.js server. NPM (node package manager) libraries omvatten verder ondermeer langgraph, openai, cors en MUI icons."
+    },
+    {
+        "question":"Hoe werkt de leaderboard precies?",
+        "answer": "De leaderboard lijst een ranking van leerlingen per league op basis van de som van hun aantal XP punten en QBits. Het is niet de bedoeling leerlingen of scholen met mekaar te vergelijken. Daarom werken we met random leagues die elke week gereset worden. Wanneer je inlogt gaan we na of je tot een league behoort. Indien niet, kennen we er één toe aan jou. Als je inlogt en je bent al 7 dagen of langer geleden toegewezen aan een league, kennen we een nieuwe aan je toe. De leagues zijn: Wodan, Bigfoot, Sphinx, Witte Wieven, en Kabouter. In de leaderboard tonen we nooit jouw echte naam. We lijsten enkel je nickname, school, richting, graad, xp punten, qbits, avatar en je leaderboard positie op"
+    },
+    {
+        "question":"Van wanneer tot wanneer loopt de BRAINSMASH commpetitie precies?",
+        "answer": "Je kan elke week van het jaar deelnemen aan een league!"
+    },
+    {
+        "question":"Hoe werken de badges?",
+        "answer": "<strong>Er zijn 5 badges: </strong><br><br><ol><li><strong>Kat: </strong>deze krijg je als je minimum 1 quiz vervolledigde voor elk onderwerp dat beschikbaar is voor jouw richting en graad</li><li><strong>Eekhoorn: </strong>ontvang deze badge door alle quizzes te vervolledigen die beschikbaar zijn voor jouw richting</li><li><strong>Ijsvogel: </strong>voor de deelnemer die de hoogste score haalde in een quiz, vergeleken met alle scores van alle leerlingen voor deze specifieke quiz</li><li><strong>Gorilla: </strong>deze krijg je automatisch als je de ijsvogel en de eekhoorn badge haalde</li><li><strong>Pole Position: </strong>deze badge is voor de deelnemer die bovenaan een league komt te staan</li></ol><br><p>Alle badges worden wekelijks gereset, in lijn met de league resets.</p>"
+    }
+]

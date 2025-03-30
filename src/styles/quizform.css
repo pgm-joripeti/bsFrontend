@@ -1,0 +1,30 @@
+#quiz-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding_xl);
+}
+
+#progress-bar {
+    width: 100%;
+    height: 1rem;
+    background-color: var(--grey-500); /* Placeholder kleur */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--green-500); /* Gevulde progress */
+    transition: width 0.5s ease-in-out; /* Vloeiende animatie */
+}
+
+#quizForm {
+    width: 90%;
+}
+
+

@@ -1,0 +1,73 @@
+/* ✨ Header met naam & productiviteit */
+#teacher-info {
+    text-align: center;
+    margin-bottom: var(--margin_l);
+    font-family: var(--title-font);
+    color: var(--grey-200);
+    font-size: var(--font-size-title);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tag naast de naam */
+.productivity-tag {
+    font-family: var(--title-font);
+    font-size: var(--font-size-text);
+    padding: var(--padding_xs) var(--padding_s);
+    border-radius: var(--border-radius_small);
+    font-weight: var(--medium-font);
+    margin-top: var(--margin_xs);
+}
+
+/* 🔥 Statistieken in een strakke rij */
+#stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--margin_m);
+    margin-bottom: var(--margin_xl);
+}
+
+/* Statistiek Cards */
+.stat-card {
+    position: relative; /* Zorgt ervoor dat de popover zich baseert op deze container */
+    background: var(--purple-800);
+    padding: var(--padding_m);
+    border-radius: var(--border-radius_large);
+    box-shadow: var(--shadow-normal);
+    text-align: center;
+    min-width: 180px;
+    z-index: 1;
+}
+
+/* Titels en waarden */
+.stat-title {
+    font-size: var(--font-size-text);
+    color: var(--grey-300);
+    margin-bottom: var(--margin_xs);
+}
+
+.stat-value {
+    font-size: var(--font-size-title);
+    font-weight: var(--fat-font);
+    color: var(--grey-200);
+}
+
+/* 🎯 Verbetering spacing tussen stats en quizcards */
+#quiz-list {
+    margin-top: var(--margin_xxl);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--margin_l);
+    justify-content: center;
+    width: 100%;
+}
+
+#quiz-list,
+#stats {
+  overflow: visible !important;
+  position: relative; /* nodig voor stacking context */
+  z-index: 1;
+}
+
