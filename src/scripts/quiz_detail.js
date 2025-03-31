@@ -218,50 +218,13 @@ async function loadQuestion(index) {
         answerGroup.classList.add("answer-group");
         answerWrapper.appendChild(answerGroup);
     
-        // Snippet dropdown
-        const snippetSelect = document.createElement("select");
-        snippetSelect.innerHTML = `
-            <option value="">Antwoordtype</option>
-            <option value="text">Tekst</option>
-            <option value="math">Wiskundige formule</option>
-            <option value="code">Code</option>
-            <option value="excel">Excel</option>
-        `;
-        snippetSelect.id = "answerSnippetType";
-        answerGroup.appendChild(snippetSelect);
+        const input = document.createElement("input");
+        input.type = "text";
+        input.id = "userAnswer";
+        input.placeholder = "Typ je antwoord hier...";
+        input.classList.add("snippet-input", "snippet-text");
+        answerGroup.appendChild(input);
 
-        // Inputveld placeholder
-        const answerInput = document.createElement("div");
-        answerInput.id = "answerSnippetInput";
-        answerGroup.appendChild(answerInput);
-    
-        snippetSelect.addEventListener("change", () => {
-            const value = snippetSelect.value;
-            answerInput.innerHTML = "";
-        
-            if (value === "text") {
-                const input = document.createElement("input");
-                input.type = "text";
-                input.id = "userAnswer";
-                input.classList.add("snippet-input", "snippet-text");
-                answerInput.appendChild(input);
-            }
-        
-            if (value === "math") {
-                const mathField = document.createElement("math-field");
-                mathField.id = "mathAnswer";
-                mathField.classList.add("snippet-input", "snippet-math");
-                answerInput.appendChild(mathField);
-            }
-        
-            if (value === "code" || value === "excel") {
-                const textarea = document.createElement("textarea");
-                textarea.id = "userAnswer";
-                textarea.placeholder = "Typ hier je antwoord...";
-                textarea.classList.add("snippet-input", `snippet-${value}`);
-                answerInput.appendChild(textarea);
-            }
-        });        
 
         applyBrainBackground("#quiz-container", {
             count: 8,
@@ -287,13 +250,7 @@ async function loadQuestion(index) {
                 const checkedBoxes = document.querySelectorAll('input[name="answer"]:checked');
                 userInput = Array.from(checkedBoxes).map(cb => cb.value);
             } else {
-                const selectedType = document.getElementById("answerSnippetType")?.value;
-
-                if (selectedType === "math") {
-                    userInput = document.getElementById("mathAnswer")?.getValue();
-                } else {
-                    userInput = document.getElementById("userAnswer")?.value?.trim();
-                }
+                userInput = document.getElementById("userAnswer")?.value?.trim();
             }
             submitAnswer(userInput, false);
         };

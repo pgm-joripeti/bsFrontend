@@ -18,7 +18,9 @@ export const loadHeader = async () => {
         header.innerHTML = `
             <header class="header--static">
                 <h1>BRAINSMASH</h1>
-                <div id="logo_brainsmash"></div>
+                <div class="brain-logo-wrapper">
+                    <img src="/assets/visuals/adaptive-icon.png" alt="Brainsmash logo" class="brain-logo" />
+                </div>
             </header>
         `;
         return;
@@ -45,7 +47,9 @@ export const loadHeader = async () => {
             header.innerHTML = `
                 <header class="header--static">
                     <h1>BRAINSMASH</h1>
-                    <div id="logo_brainsmash"></div>
+                    <div class="brain-logo-wrapper">
+                        <img src="/assets/visuals/adaptive-icon.png" alt="Brainsmash logo" class="brain-logo" />
+                    </div>
                 </header>
             `;
             return;

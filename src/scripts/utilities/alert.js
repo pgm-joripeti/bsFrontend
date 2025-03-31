@@ -1,17 +1,6 @@
 let alertModal = null;
 let alertOverlay = null;
 
-const alertText = document.getElementById("alertModalText");
-/* toon een icoon bij het type (indien aanwezig in HTML! >
-in html dit te zetten waar je icon wilt: <span id="alertModalIcon" class="material-icons alert-icon">info</span>) */
-const alertIcon = document.getElementById("alertModalIcon");
-
-if (alertText) {
-    alertText.innerText = message;
-} else {
-    console.error("❌ #alertModalText niet gevonden in showAlert!");
-}
-
 export async function showAlert(message, options = {}) {
     const {
         shareComponent = null,
@@ -25,8 +14,15 @@ export async function showAlert(message, options = {}) {
         const html = await fetch("/components/alertModal.html").then(r => r.text());
         const temp = document.createElement("div");
         temp.innerHTML = html;
-        alertModal = temp.firstElementChild;
+        alertModal = temp.querySelector("#alertModal");
+        if (!alertModal) {
+            console.error("❌ alertModal kon niet gevonden worden in HTML:", html);
+            return;
+        }
+
         document.body.appendChild(alertModal);
+        console.log("📌 Modal toegevoegd aan body?", document.getElementById("alertModal"));
+
     }
 
     if (!alertOverlay) {
@@ -42,6 +38,32 @@ export async function showAlert(message, options = {}) {
     } else {
         console.error("❌ #alertModalText niet gevonden in showAlert!");
     }
+
+    const alertIcon = document.getElementById("alertModalIcon");
+    const type = options.type || "info";
+
+    if (alertIcon) {
+        alertIcon.className = "material-icons alert-icon"; // reset class
+
+        switch (type) {
+            case "success":
+                alertIcon.innerText = "check_circle";
+                alertIcon.style.color = "var(--color-success)";
+                break;
+            case "error":
+                alertIcon.innerText = "error";
+                alertIcon.style.color = "var(--color-error)";
+                break;
+            case "warning":
+                alertIcon.innerText = "warning";
+                alertIcon.style.color = "var(--color-warning)";
+                break;
+            default:
+                alertIcon.innerText = "info";
+                alertIcon.style.color = "var(--color-primary)";
+        }
+    }
+
 
     // ✅ Injecteer shareComponent als aanwezig
     const shareZone = document.getElementById("alertModalShareZone");
@@ -67,6 +89,13 @@ export async function showAlert(message, options = {}) {
                 resolve(result);
             }, 800);
         };
+
+        // const closeX = document.getElementById("alertModalClose");
+        // if (closeX) {
+        //     closeX.onclick = () => closeModal();
+        // }
+
+        alertOverlay.onclick = () => closeModal(false);
 
         // Bevestigingsknop (optioneel)
         if (confirmButton) {
@@ -101,27 +130,4 @@ export async function showAlert(message, options = {}) {
         alertModal.classList.add("wobble-in--alert");
         alertOverlay.style.display = "block";
     });
-}
-
-
-if (alertIcon) {
-    alertIcon.className = "material-icons alert-icon"; // reset eventuele vorige classes
-
-    switch (type) {
-        case "success":
-            alertIcon.innerText = "check_circle";
-            alertIcon.style.color = "var(--color-success)";
-            break;
-        case "error":
-            alertIcon.innerText = "error";
-            alertIcon.style.color = "var(--color-error)";
-            break;
-        case "warning":
-            alertIcon.innerText = "warning";
-            alertIcon.style.color = "var(--color-warning)";
-            break;
-        default:
-            alertIcon.innerText = "info";
-            alertIcon.style.color = "var(--color-primary)";
-    }
 }

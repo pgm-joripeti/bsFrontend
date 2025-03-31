@@ -117,8 +117,32 @@
   }
   
   .alert-icon {
-    font-size: 2rem;
-    vertical-align: middle;
-    margin-right: var(--margin_s);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--color-primary); /* fallback als JS faalt */
+    margin-right: var(--margin_m);
+    flex-shrink: 0;
+  }
+  
+  
+  /* .alert-close-icon {
+    position: absolute;
+    top: var(--margin_s);
+    right: var(--margin_s);
+    font-size: var(font-size-title);
+    color: var(--purple-700);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  } */
+  
+  /* .alert-close-icon:hover {
+    transform: scale(1.2);
+    color: var(--color-error);
+  } */
+  
+  .modal-content__body {
+    display: flex;
+    align-items: center;
+    gap: var(--margin_s);
   }
   

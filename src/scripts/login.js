@@ -93,9 +93,11 @@ export function initLogin() {
                 const email = document.querySelector("#email")?.value.trim();
 
                 if (!email) {
-                    showAlert("Vul eerst je e-mailadres in.");
+                    showAlert("Vul eerst je e-mailadres in.", {
+                        type: "warning" // 🔥 dit toont het juiste icoon en kleur
+                    });
                     return;
-                }
+                }                
 
                 try {
                     const res = await fetch(`${API_BASE}/api/auth/reset-password`, {

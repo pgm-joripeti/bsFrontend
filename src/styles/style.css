@@ -389,7 +389,7 @@ a {
 .nav-links li,
 .nav-links i,
 .header--dynamic nav,
-.logo {
+.brain-logo {
     transition: all 0.4s ease-in-out;
 }
 
@@ -398,17 +398,9 @@ a {
     line-height: 1;
     display: inline-block;
 }
-  
-.logo {
-    margin-left: var(--margin_l);
-}  
 
 /* 1️⃣ @media voor max-width: 83rem (1328px) */
 @media (max-width: 1328px) {
-
-    .logo {
-        margin: var(--margin_m) 0 0 0;
-    }
 
     .header--dynamic nav {
         flex-direction: column;
@@ -469,9 +461,6 @@ a {
     .nav-links :first-child,
     .nav-links :last-child {
         border-radius: 0; /* GEEN border-radius in de media queries */
-    }
-    .logo {
-        margin-bottom: var(--margin_l);
     }
 }
 
@@ -669,15 +658,30 @@ input:-webkit-autofill:active {
     color: var(--red-500);
     font-size: var(--font-size-text);
 }
-
-#logo_brainsmash{
-    width: 50px;
-    height: 40px;
-    background-image: url("/assets/visuals/adaptive-icon.png");
-    background-size: cover;
+.brain-logo-wrapper {
+    width: 70px;
+    height: 70px;
+    min-width: 55px; /* voorkomt knijpen */
+    min-height: 55px;
+    background-color: var(--purple-700);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-normal);
+    flex-shrink: 0; /* zorgt dat hij niet mee krimpt in flexbox */
+    overflow: hidden;
+    position: relative; /* voor eventuele layering */
+  }
+  
+  .brain-logo {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
     display: block;
-    margin-right: var(--margin_xxl);
-}
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+  }
 
 .question--container {
     position: relative;
