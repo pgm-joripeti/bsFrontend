@@ -80,12 +80,15 @@
   background-color: var(--spectrum--blue);
   padding: var(--padding_xs) var(--padding_m);
   border-radius: var(--border-radius_medium);
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  z-index: 1;
   display: inline-block;
   color: var(--grey-100);
   font-weight: var(--medium-font);
   text-decoration: none;
 }
+
+
 
 

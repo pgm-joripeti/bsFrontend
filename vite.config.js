@@ -3,8 +3,15 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
+  base: './',
   root: '.', // jouw frontend root is de map zelf
   publicDir: 'public',
+  // "routes": [
+  //   {
+  //     "src": "/(.*)",
+  //     "dest": "/index.html"
+  //   }
+  // ],
   resolve: {
     alias: {
       mathjax: path.resolve(__dirname, 'node_modules/mathjax-full'),

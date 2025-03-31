@@ -85,39 +85,38 @@ export function initLogin() {
                 errorMessage.innerText = "Er is een fout opgetreden bij het inloggen.";
             }
         });
-    }, 100);
+        // ✅ Password reset link
+        const resetLink = document.getElementById("resetPasswordLink");
+        if (resetLink) {
+            resetLink.addEventListener("click", async (event) => {
+                event.preventDefault();
+                const email = document.querySelector("#email")?.value.trim();
 
-    // ✅ Password reset link
-    const resetLink = document.getElementById("resetPasswordLink");
-    if (resetLink) {
-        resetLink.addEventListener("click", async (event) => {
-            event.preventDefault();
-            const email = document.querySelector("#email")?.value.trim();
-
-            if (!email) {
-                showAlert("Vul eerst je e-mailadres in.");
-                return;
-            }
-
-            try {
-                const res = await fetch(`${API_BASE}/api/auth/reset-password`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email })
-                });
-
-                const data = await res.json();
-
-                if (res.ok) {
-                    showAlert("Check je e-mail voor een reset-link.");
-                } else {
-                    showAlert(data.error || "Kon geen reset e-mail versturen.");
+                if (!email) {
+                    showAlert("Vul eerst je e-mailadres in.");
+                    return;
                 }
-            } catch (error) {
-                console.error("❌ Fout bij reset:", error);
-                showAlert("Er ging iets mis. Probeer opnieuw.");
-            }
-        });
-    }
+
+                try {
+                    const res = await fetch(`${API_BASE}/api/auth/reset-password`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email })
+                    });
+
+                    const data = await res.json();
+
+                    if (res.ok) {
+                        showAlert("Check je e-mail voor een reset-link.");
+                    } else {
+                        showAlert(data.error || "Kon geen reset e-mail versturen.");
+                    }
+                } catch (error) {
+                    console.error("❌ Fout bij reset:", error);
+                    showAlert("Er ging iets mis. Probeer opnieuw.");
+                }
+            });
+        }
+    }, 100); 
 }
 

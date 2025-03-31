@@ -66,6 +66,9 @@ const renderLeaderboard = (players, rankingData) => {
 
             // ✨ Shine wrapper
             if (isCurrentUser) {
+                const shineContainer = document.createElement("div");
+                shineContainer.classList.add("shine-container");
+
                 const shineWrapper = document.createElement("div");
                 shineWrapper.classList.add("shine-wrapper");
 
@@ -73,7 +76,8 @@ const renderLeaderboard = (players, rankingData) => {
                 shine.classList.add("glossy-shine");
 
                 shineWrapper.appendChild(shine);
-                entry.appendChild(shineWrapper);
+                shineContainer.appendChild(shineWrapper);
+                entry.appendChild(shineContainer);
     }
 
 // 📦 Content wrapper

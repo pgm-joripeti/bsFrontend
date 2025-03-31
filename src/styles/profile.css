@@ -140,7 +140,7 @@
   }
   
   .profile__info-icon {
-    font-size: calc(var(--font-size-text)*1.8;
+    font-size: calc(var(--font-size-text)*1.8);
     display: flex;
     align-items: center;
     justify-content: center;

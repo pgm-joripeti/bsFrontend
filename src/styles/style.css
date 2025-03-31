@@ -669,7 +669,7 @@ input:-webkit-autofill:active {
 #logo_brainsmash{
     width: 50px;
     height: 40px;
-    background-image: url("../public/assets/visuals/adaptive-icon.png");
+    background-image: url("/assets/visuals/adaptive-icon.png");
     background-size: cover;
     display: block;
     margin-right: var(--margin_xxl);
