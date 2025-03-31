@@ -116,4 +116,9 @@
     animation: wobbleOutAlert 0.6s ease forwards;
   }
   
+  .alert-icon {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin-right: var(--margin_s);
+  }
   

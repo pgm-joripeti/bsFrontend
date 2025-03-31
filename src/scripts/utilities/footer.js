@@ -59,6 +59,8 @@ export const loadFooter = async () => {
 const addFooterEventListeners = () => {
     const faqLinkStudent = document.getElementById("nav-FAQ_student");
     const faqLinkTeacher = document.getElementById("nav-FAQ_teacher");
+    const disclaimerLink = document.getElementById("nav-disclaimer");
+    const contactLink = document.getElementById("nav-contact");
 
     if (faqLinkStudent) {
         faqLinkStudent.addEventListener("click", (event) => {
@@ -73,6 +75,24 @@ const addFooterEventListeners = () => {
             event.preventDefault();
             console.log("📌 Navigeren naar FAQ Teacher");
             navigateTo("/FAQ_teacher");
+        });
+    }
+
+    if (disclaimerLink) {
+        disclaimerLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log("📌 Navigeren naar disclaimer");
+            navigateTo("/disclaimer");
+        });
+    }
+
+    if (contactLink) {
+        contactLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log("📌 mailen naar brainsmash");
+            const user = "hi";
+            const domain = "brainsmash.be";
+            window.location.href = `mailto:${user}@${domain}`;
         });
     }
 };

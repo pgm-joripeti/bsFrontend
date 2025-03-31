@@ -13,6 +13,7 @@ import { initEditQuiz } from "./teacher_edit_quiz.js";
 import { fetchQuestions } from "./quiz_detail.js";
 import { fetchQuizResults } from "./quiz_result.js"; 
 import { fetchFAQStudent, fetchFAQTeacher } from "./fetchFAQ.js"; 
+import { fetchDisclaimer } from "./fetchDisclaimer.js";
 import { injectOverlay, removeOverlay } from "./utilities/overlays.js";
 
 import { showMemeWheel } from './utilities/memeWheel.js';
@@ -40,7 +41,8 @@ const routes = {
     "/quiz_result": "views/quiz_result.html",
     "/404": "views/404.html",  // ✅ Zorg dat deze 404 bestaat
     "/FAQ_student": "views/FAQ_student.html",
-    "/FAQ_teacher": "views/FAQ_teacher.html"
+    "/FAQ_teacher": "views/FAQ_teacher.html",
+    "/disclaimer": "views/disclaimer.html"
 };
 
 // ✅ Voorkom dubbele navigatie en oneindige loops
@@ -179,6 +181,7 @@ const loadView = async (fullPath) => {
                 break;
             case "/FAQ_student": fetchFAQStudent(); break;
             case "/FAQ_teacher": fetchFAQTeacher(); break;
+            case "/disclaimer": fetchDisclaimer(); break;
         }
     } catch (error) {
         console.error("❌ FOUT bij laden van view:", error);

@@ -152,7 +152,7 @@ export async function initRegister() {
                 if (data.error) {
                     await showAlert("Registratie mislukt: " + data.error);
                 } else {
-                    await showAlert("Succesvol geregistreerd!");
+                    await showAlert("Succesvol geregistreerd! Check je mailbox voor verificatie!");
                     navigateTo("/");
                 }
             } catch (error) {

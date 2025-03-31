@@ -25,6 +25,7 @@ import './styles/socials.css';
 import './styles/scroll-focus.css';
 import './styles/meme-wheel.css';
 import './styles/snippet.css';
+import './styles/disclaimer.css';
 
 import './scripts/utilities/material_icons.js';
 
@@ -32,6 +33,29 @@ import { mathjax } from 'mathjax-full/es5/tex-chtml.js'; // ✅ gebruik de gebun
 import { navigateTo, initRouter } from './scripts/router.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-  initRouter(); // zet SPA-routing weer op
+  const hash = window.location.hash;
+
+  // ✅ Als we via Supabase een access_token gekregen hebben (verificatie of magic link)
+  if (hash.includes("access_token")) {
+    const params = new URLSearchParams(hash.slice(1)); // haal alles na '#' en parse
+    const accessToken = params.get("access_token");
+    const refreshToken = params.get("refresh_token");
+    const expiresIn = params.get("expires_in");
+
+    if (accessToken) {
+      // 🔐 Optioneel: extra info bewaren
+      localStorage.setItem("token", accessToken);
+      localStorage.setItem("refresh_token", refreshToken);
+      localStorage.setItem("expires_in", expiresIn);
+      localStorage.setItem("auth_origin", "verified");
+
+      console.log("✅ E-mailverificatie voltooid. Token opgeslagen.");
+      return;
+    }
+  }
+
+  // ✅ Init router na fragment-handling
+  initRouter();
 });
+
 

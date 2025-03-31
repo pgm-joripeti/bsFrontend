@@ -482,7 +482,7 @@ a {
     }
 
     .nav-links li {
-        padding: 0;
+        padding: var(--padding_xs) var(--padding_s);
         
     }
 
@@ -553,6 +553,10 @@ h1 {
 
 h1, h2, h3 {
     color: var(--grey-200);
+}
+
+.greeting {
+    margin-top: calc(2*var(--margin_xl));
 }
 
 input {
@@ -809,6 +813,9 @@ input:-webkit-autofill:active {
     border-radius: 0 0 var(--border-radius_extra-large) var(--border-radius_extra-large);
     box-shadow: var(--shadow-elevated);
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #dashboard-teacher {
@@ -816,3 +823,10 @@ input:-webkit-autofill:active {
     margin: 0 auto;
 }
 
+#resetPasswordLink {
+    color: var(--grey-500);
+}
+
+#resetPasswordLink:hover {
+    color: var(--grey-400);
+}

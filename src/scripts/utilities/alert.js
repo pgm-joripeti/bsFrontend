@@ -1,6 +1,17 @@
 let alertModal = null;
 let alertOverlay = null;
 
+const alertText = document.getElementById("alertModalText");
+/* toon een icoon bij het type (indien aanwezig in HTML! >
+in html dit te zetten waar je icon wilt: <span id="alertModalIcon" class="material-icons alert-icon">info</span>) */
+const alertIcon = document.getElementById("alertModalIcon");
+
+if (alertText) {
+    alertText.innerText = message;
+} else {
+    console.error("❌ #alertModalText niet gevonden in showAlert!");
+}
+
 export async function showAlert(message, options = {}) {
     const {
         shareComponent = null,
@@ -90,4 +101,27 @@ export async function showAlert(message, options = {}) {
         alertModal.classList.add("wobble-in--alert");
         alertOverlay.style.display = "block";
     });
+}
+
+
+if (alertIcon) {
+    alertIcon.className = "material-icons alert-icon"; // reset eventuele vorige classes
+
+    switch (type) {
+        case "success":
+            alertIcon.innerText = "check_circle";
+            alertIcon.style.color = "var(--color-success)";
+            break;
+        case "error":
+            alertIcon.innerText = "error";
+            alertIcon.style.color = "var(--color-error)";
+            break;
+        case "warning":
+            alertIcon.innerText = "warning";
+            alertIcon.style.color = "var(--color-warning)";
+            break;
+        default:
+            alertIcon.innerText = "info";
+            alertIcon.style.color = "var(--color-primary)";
+    }
 }

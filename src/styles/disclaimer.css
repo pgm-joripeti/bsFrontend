@@ -1,0 +1,29 @@
+#disclaimer {
+    padding: var(--padding_xl);
+  }
+  
+  .disclaimer-container {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: var(--padding_m);
+  }
+  
+  #disclaimer > h1 {
+    color: var(--yellow-500);
+    font-family: var(--title-font);
+    font-size: var(--font-size-title);
+  }
+  
+  .disclaimer-item > p {
+    font-family: var(--text-font);
+    font-size: var(--font-size-text);
+    color: var(--grey-200);
+    margin-bottom: var(--margin_m);
+  }
+  
+  @media (max-width: 48rem) {
+    .disclaimer-container {
+      padding: var(--padding_s);
+    }
+  }
+  

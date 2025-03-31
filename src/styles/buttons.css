@@ -130,3 +130,10 @@
     max-width: 25rem;
 }
 
+@media (max-width:560px ) { 
+    .btn-success,
+    #addQuestionBtn,
+    .removeQuestionBtn {
+        max-width: 11rem;
+    }
+}

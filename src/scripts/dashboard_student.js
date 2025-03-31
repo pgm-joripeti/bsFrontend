@@ -1,11 +1,27 @@
 import { navigateTo } from "./router.js";
 import { applyBrainBackground } from "./utilities/brainBackground.js";
 import { secureFetch } from "./utilities/apiClient.js"
+import { showAlert } from "./utilities/alert.js";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 export function initDashboardStudent() {
-    
+
+    // ✅ Check voor Stripe betalingsstatus in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get("payment");
+
+    if (status === "success") {
+            showAlert("Betaling gelukt! Je Qbits worden toegevoegd.", { type: "success" });
+        } else if (status === "cancel") {
+            showAlert("Betaling geannuleerd.", { type: "warning" });
+        }      
+
+    if (status) {
+        const newUrl = window.location.origin + window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
+        } // haal ?payment... urlParams uit de URL na tonen modal zodat refresh reguliere pagina geeft 
+
     console.log("✅ Dashboard Student geladen.");
 
     const popSound = new Audio("/assets/sounds/pop.mp3");
